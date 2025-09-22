@@ -1,4 +1,5 @@
 import random
+import menu
 
 def conversor_temperaturas():
     t = int(input("Introduce la temperatura en Celsius: "))
@@ -104,20 +105,9 @@ def juego_adivinanza():
     print(f"¡ACERSTASTE! El numero era {n}, te llevo {intentos} intentos")
 
 if __name__ == "__main__":
-    print("---------------------------------")
-    print("Salir 0:")
-    print("Opcion 1: Conversor temperaturas")
-    print("Opcion 2: Numeros pares/impares")
-    print("Opcion 3: Frecuencia de caracteres")
-    print("Opcion 4: Calculadora básica")
-    print("Opcion 5: Ordenación de palabras")
-    print("Opcion 6: Números primos en un rango")
-    print("Opcion 7: Gestión de notas")
-    print("Opcion 8: Juego de adivinanza")
-    print("---------------------------------")
     option = 1
     while option != 0:
-        option = int(input("Opcion: "))
+        option = menu.menuAlgoritmia()
         match option:
             case 1:
                 conversor_temperaturas()
