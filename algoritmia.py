@@ -91,7 +91,6 @@ def gestion_notas():
     print(f"Nota mas alta y alumno: {notas[posMax]} --> {alumnos[posMax]}")
     print(f"Nota mas baja y alumno: {notas[posMin]} --> {alumnos[posMin]}")
 
-
 def juego_adivinanza():
     n = random.randint(1, 100)
     num, intentos = 0, 0
@@ -102,7 +101,7 @@ def juego_adivinanza():
             print(f"El numero {num} es mayor al generado...")
         elif num < n:
             print(f"El numero {num} es menor al generado...")
-    print(f"¡ACERSTASTE! El numero era {n}")
+    print(f"¡ACERSTASTE! El numero era {n}, te llevo {intentos} intentos")
 
 if __name__ == "__main__":
     print("---------------------------------")
