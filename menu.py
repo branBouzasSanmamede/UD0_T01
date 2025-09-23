@@ -1,12 +1,3 @@
-def menuContactos():
-    print("-------------------------")
-    print("Salir 0:")
-    print("Opcion 1: Añadir contacto")
-    print("Opcion 2: Buscar contacto")
-    print("Opcion 3: Ver contactos")
-    print("-------------------------")
-    return int(input("Opcion: "))
-
 def menuAlgoritmia():
     print("---------------------------------")
     print("Salir 0:")
@@ -30,3 +21,25 @@ def menuSecuencias():
     print("Opcion 4: Lista de diccionarios (agenda)")
     print("------------------------------------------------")
     return int(input("Opcion: "))
+
+def menuContactos():
+    print("-------------------------")
+    print("Salir 0:")
+    print("Opcion 1: Añadir contacto")
+    print("Opcion 2: Buscar contacto")
+    print("Opcion 3: Ver contactos")
+    print("-------------------------")
+    return int(input("Opcion: "))
+
+def menuFunciones():
+    print("----------------------------------------")
+    print("Salir 0:")
+    print("Opcion 1: Funciones simples")
+    print("Opcion 2: Funciones con retorno múltiple")
+    print("Opcion 3: Uso de functools.reduce")
+    print("Opcion 4: Módulos propios")
+    print("----------------------------------------")
+    return int(input("Opcion: "))
+
+if __name__ == "__main__":
+    print("Este es el modulo de los menus")
