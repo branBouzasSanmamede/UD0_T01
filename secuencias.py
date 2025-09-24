@@ -1,4 +1,23 @@
-import menu, math
+import math
+
+def menuSecuencias():
+    print("------------------------------------------------")
+    print("Salir 0:")
+    print("Opcion 1: Diccionario de frecuencias de palabras")
+    print("Opcion 2: Tuplas y coordenadas")
+    print("Opcion 3: Diccionario inverso")
+    print("Opcion 4: Lista de diccionarios (agenda)")
+    print("------------------------------------------------")
+    return int(input("Opcion: "))
+
+def menuContactos():
+    print("-------------------------")
+    print("Salir 0:")
+    print("Opcion 1: Añadir contacto")
+    print("Opcion 2: Buscar contacto")
+    print("Opcion 3: Ver contactos")
+    print("-------------------------")
+    return int(input("Opcion: "))
 
 def diccionario():
     frase = input("Introduce una frase: ")
@@ -13,10 +32,10 @@ def diccionario():
 
 def distanciaEuclidiana():
     print("Introduce las coordenadas del primer punto: ")
-    x1 = float(input("X1: "))
+    x1 = int(input("X1: "))
     y1 = int(input("Y1: "))
     print("Introduce las coordenadas del segundo punto: ")
-    x2 = float(input("X2: "))
+    x2 = int(input("X2: "))
     y2 = int(input("Y2: "))
     e = math.sqrt((x2 - x1)**2 + (y2 - y1)**2)
     print(f"La distancia euclidiana es: {e}")
@@ -59,7 +78,7 @@ def listaDiccionarios():
     contactos = {}
     option = 1
     while option != 0:
-        option = menu.menuContactos()
+        option = menuContactos()
         match option:
             case 1:
                 nombre, tel = nuevoContacto()
@@ -74,10 +93,10 @@ def listaDiccionarios():
                     print("Opcion invalida")
     print("Agenda cerrada!")
 
-if __name__ == "__main__":
+def main():
     option = 1
     while option != 0:
-        option = menu.menuSecuencias()
+        option = menuSecuencias()
         match option:
             case 1:
                 diccionario()
@@ -91,3 +110,6 @@ if __name__ == "__main__":
                 if option != 0:
                     print("Opcion invalida")
     print("Hasta luego!")
+
+if __name__ == "__main__":
+    main()

@@ -1,6 +1,15 @@
 from functools import reduce
-import menu
 import utilidades
+
+def menuFunciones():
+    print("----------------------------------------")
+    print("Salir 0:")
+    print("Opcion 1: Funciones simples")
+    print("Opcion 2: Funciones con retorno múltiple")
+    print("Opcion 3: Uso de functools.reduce")
+    print("Opcion 4: Módulos propios")
+    print("----------------------------------------")
+    return int(input("Opcion: "))
 
 def es_par(n):
     return n % 2 == 0
@@ -45,10 +54,10 @@ def functools_reduce():
     else:
         print("No se ingresaron numeros")
 
-if __name__ == "__main__":
+def main():
     option = 1
     while option != 0:
-        option = menu.menuFunciones()
+        option = menuFunciones()
         match option:
             case 1:
                 funciones_simples()
@@ -62,3 +71,6 @@ if __name__ == "__main__":
                 if option != 0:
                     print("Opcion invalida")
     print("Hasta luego!")
+
+if __name__ == "__main__":
+    main()

@@ -1,5 +1,18 @@
 import random
-import menu
+
+def menuAlgoritmia():
+    print("---------------------------------")
+    print("Salir 0:")
+    print("Opcion 1: Conversor temperaturas")
+    print("Opcion 2: Numeros pares/impares")
+    print("Opcion 3: Frecuencia de caracteres")
+    print("Opcion 4: Calculadora básica")
+    print("Opcion 5: Ordenación de palabras")
+    print("Opcion 6: Números primos en un rango")
+    print("Opcion 7: Gestión de notas")
+    print("Opcion 8: Juego de adivinanza")
+    print("---------------------------------")
+    return int(input("Opcion: "))
 
 def conversor_temperaturas():
     t = int(input("Introduce la temperatura en Celsius: "))
@@ -77,20 +90,23 @@ def gestion_notas():
     alumnos, notas = [], []
     media, posMax, posMin = 0, 0, 0
     while continuar != "fin":
-        continuar = input("Introduce nombre de alumno (escribe fin para salir): ").lower()
-        if continuar != "fin":
+        continuar = input("Introduce nombre de alumno (escribe fin para salir): ")
+        if continuar.lower() != "fin":
             alumnos.append(continuar.capitalize())
             notas.append(int(input("Introduce la nota: ")))
-    for i in range(len(notas)):
-        if notas[i] > notas[posMax]:
-            posMax = i
-        if notas[i] < notas[posMin]:
-            posMin = i
-        media += notas[i]
-    media /= len(notas)
-    print(f"Nota media: {media}")
-    print(f"Nota mas alta y alumno: {notas[posMax]} --> {alumnos[posMax]}")
-    print(f"Nota mas baja y alumno: {notas[posMin]} --> {alumnos[posMin]}")
+    if notas:
+        for i in range(len(notas)):
+            if notas[i] > notas[posMax]:
+                posMax = i
+            if notas[i] < notas[posMin]:
+                posMin = i
+            media += notas[i]
+        media /= len(notas)
+        print(f"Nota media: {media}")
+        print(f"Nota mas alta y alumno: {notas[posMax]} --> {alumnos[posMax]}")
+        print(f"Nota mas baja y alumno: {notas[posMin]} --> {alumnos[posMin]}")
+    else:
+        print("No hay notas para procesar")
 
 def juego_adivinanza():
     n = random.randint(1, 100)
@@ -102,12 +118,12 @@ def juego_adivinanza():
             print(f"El numero {num} es mayor al generado...")
         elif num < n:
             print(f"El numero {num} es menor al generado...")
-    print(f"¡ACERSTASTE! El numero era {n}, te llevo {intentos} intentos")
+    print(f"¡ACERTASTE! El numero era {n}, te llevo {intentos} intentos")
 
-if __name__ == "__main__":
+def main():
     option = 1
     while option != 0:
-        option = menu.menuAlgoritmia()
+        option = menuAlgoritmia()
         match option:
             case 1:
                 conversor_temperaturas()
@@ -129,3 +145,6 @@ if __name__ == "__main__":
                 if option != 0:
                     print("Opcion invalida")
     print("Hasta luego!")
+
+if __name__ == "__main__":
+    main()
