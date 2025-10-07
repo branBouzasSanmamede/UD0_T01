@@ -1,3 +1,5 @@
+MONGO_URI = "mongodb://root:abc123.@localhost:27017/"
+
 def mostrar_menu(opciones):
     lineas = []
     max_len = 0 
